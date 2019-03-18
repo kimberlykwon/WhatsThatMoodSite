@@ -10,7 +10,7 @@ URI     : https://colorlib.com
  -->
 
 <head>
-    <title>MobApp - App Landing Page Template</title>
+    <title>What's That Mood?</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -44,11 +44,11 @@ URI     : https://colorlib.com
                         <div class="collapse navbar-collapse" id="navbar">
                             <ul class="navbar-nav ml-auto">
                                 <li class="nav-item"> <a class="nav-link active" href="#home">HOME <span class="sr-only">(current)</span></a> </li>
-                                <li class="nav-item"> <a class="nav-link" href="#features">FEATURES</a> </li>
+                                <li class="nav-item"> <a class="nav-link" href="#overview">OVERVIEW</a> </li>
+                                <li class="nav-item"> <a class="nav-link" href="#methodology">METHODOLOGY</a> </li>
                                 <li class="nav-item"> <a class="nav-link" href="#gallery">GALLERY</a> </li>
-                                <li class="nav-item"> <a class="nav-link" href="#pricing">PRICING</a> </li>
                                 <li class="nav-item"> <a class="nav-link" href="#contact">CONTACT</a> </li>
-                                <li class="nav-item"><a href="#" class="btn btn-outline-light my-3 my-sm-0 ml-lg-3">Download</a></li>
+                                <li class="nav-item"><a href="#download" class="btn btn-outline-light my-3 my-sm-0 ml-lg-3">Download</a></li>
                             </ul>
                         </div>
                     </nav>
@@ -127,7 +127,7 @@ URI     : https://colorlib.com
     </div> -->
     <!-- // end .section -->
 
-    <div class="section pt-0">
+    <div class="section light-bg" id="overview">
         <div class="container">
             <div class="section-title">
                 <h3>A Brief Overview</h3>
@@ -137,14 +137,13 @@ URI     : https://colorlib.com
                 Many modern music recommendation systems have built recommendations surrounding moods. We wanted to build our own musical mood classifier that is able to take in audio of a song, and determine the overall mood of it.
                 <br/>
                 With the advancements and success of many strong music exploration and recommendation software available today, the mood of songs has become an incredibly important factor in this hierarchy. People’s moods change frequently, and their moods will often affect their taste in music at that time. Furthermore, music also tends to incite emotion, and being able to leverage the emotional power of music in order to spark a feeling in a listener can be extremely powerful in many settings. To generate more successful recommendations, it’s important to be able to categorize songs by their overall mood in order to better match a user’s musical preferences at that particular time. 
-
             </div>
         </div>
 
     </div>
     <!-- // end .section -->
 
-    <div class="section light-bg">
+    <div class="section light-bg" id="methodology">
         <div class="container">
             <div class="section-title">
                 <h3>Methodology</h3>
@@ -167,13 +166,12 @@ URI     : https://colorlib.com
             <div class="tab-content">
                 <div class="tab-pane fade show active" id="communication">
                     <div class="d-flex flex-column flex-lg-row">
-                        <img src="images/graphic.png" alt="graphic" class="img-fluid rounded align-self-start mr-lg-5 mb-5 mb-lg-0">
                         <div>
 
                             <h2>The Data We Used</h2>
                             <p>We used the SpotiPy, Spotify's Python API, to search for 15 playlists for each mood we used as a classifying label, and downloaded data about the song features, such as tempo and loudness, for all songs in the playlists, giving us at least 1000 songs per classification with 9 different classes, for a total of about 9000 songs.
                             </p>
-                            <p>To perform sentiment analysis on each song's lyric, we used the Genius Python API to retrieve the lyrics for each song, and the overall sentiment for the lyrics were calculated using Python TextBlob.
+                            <p>To perform sentiment analysis on each song's lyric, we used the Genius Python API to retrieve the lyrics for each song, and the overall sentiment for the lyrics were calculated using Python TextBlob and averaged across all lines.
                             </p>
                         </div>
                     </div>
@@ -187,12 +185,10 @@ URI     : https://colorlib.com
                             <p>
                             </p>
                         </div>
-                        <img src="images/graphic.png" alt="graphic" class="img-fluid rounded align-self-start mr-lg-5 mb-5 mb-lg-0">
                     </div>
                 </div>
                 <div class="tab-pane fade" id="messages">
                     <div class="d-flex flex-column flex-lg-row">
-                        <img src="images/graphic.png" alt="graphic" class="img-fluid rounded align-self-start mr-lg-5 mb-5 mb-lg-0">
                         <div>
                             <h2>Results</h2>
                             <p class="lead">Uniquely underwhelm premium outsourcing with proactive leadership skills. </p>
@@ -211,11 +207,8 @@ URI     : https://colorlib.com
                             <h2>Future Improvements</h2>
                             <p>One aspect we noticed about our data gathering method was that since we were using user-created playlists on Spotify, a song's existence in a certain mood playlist was completely subjective to the playlist creator. There were songs that had mood classifications that we personally did not agree with. In the future, we would look into other ways of categorizing songs.
                             </p>
-                            <p> malesuada faucibus augue aliquet. Sed elit est, eleifend sed dapibus a, semper a eros. Vestibulum blandit vulputate pharetra. Phasellus lobortis leo a nisl euismod, eu faucibus justo sollicitudin. Mauris consectetur, tortor
-                                sed tempor malesuada, sem nunc porta augue, in dictum arcu tortor id turpis. Proin aliquet vulputate aliquam.
-                            </p>
+                            <p>Additionally, in the future our project could be used to automatically generate Spotify mood playlists, for the perfect playlist for any situation.</p>
                         </div>
-                        <img src="images/graphic.png" alt="graphic" class="img-fluid rounded align-self-start mr-lg-5 mb-5 mb-lg-0">
                     </div>
                 </div>
             </div>
@@ -246,25 +239,22 @@ URI     : https://colorlib.com
     </div>
     <!-- // end .section -->
 
-
-
-    <div class="section">
-
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 offset-lg-6">
-                    <div class="box-icon"><span class="ti-mobile gradient-fill ti-3x"></span></div>
-                    <h2>Check Out The Project</h2>
-                    <p class="mb-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati vel exercitationem eveniet vero maxime ratione </p>
-                    <a href="https://github.com/wessyy/WhatsThatMood" target="_blank" class="btn btn-primary">Download</a>
-                </div>
+     <div class="section light-bg" id="download">
+        <div class="container" style="display: center">
+            <div class="section-title">
+                <h2>Download</h2>
             </div>
-            <div class="perspective-phone">
-                <img src="images/perspective.png" alt="perspective phone" class="img-fluid">
+            <div class="offset-lg-2">
+                <p>Download the repository and try it out on your own machine. Just type "python main.py" into the terminal.</p>
+            </div>
+            <div class="col-lg-6 offset-lg-5">
+                <a href="https://github.com/wessyy/WhatsThatMood" target="_blank" class="btn btn-primary">Download</a>
             </div>
         </div>
 
     </div>
+
+    
     <!-- // end .section -->
 
 
@@ -292,13 +282,9 @@ URI     : https://colorlib.com
                             <div class="circle-icon mr-4">3</div>
                             <div class="media-body">
                                 <h5>See What Kind of Mood Your Song Is!</h5>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum, urna eu pellentesque pretium obcaecati vel exercitationem </p>
                             </div>
                         </li>
                     </ul>
-                </div>
-                <div class="col-md-4">
-                    <img src="images/iphonex.png" alt="iphone" class="img-fluid">
                 </div>
 
             </div>
@@ -309,7 +295,7 @@ URI     : https://colorlib.com
     <!-- // end .section -->
 
 
-    <div class="section">
+    <!-- <div class="section">
         <div class="container">
             <div class="section-title">
                 <small>TESTIMONIALS</small>
@@ -339,78 +325,14 @@ URI     : https://colorlib.com
 
         </div>
 
-    </div>
-    <!-- // end .section -->
-
-
-
-    <!-- <div class="section" id="pricing">
-        <div class="container">
-            <div class="section-title">
-                <small>PRICING</small>
-                <h3>Upgrade to Pro</h3>
-            </div>
-
-            <div class="card-deck">
-                <div class="card pricing">
-                    <div class="card-head">
-                        <small class="text-primary">PERSONAL</small>
-                        <span class="price">$14<sub>/m</sub></span>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <div class="list-group-item">10 Projects</div>
-                        <div class="list-group-item">5 GB Storage</div>
-                        <div class="list-group-item">Basic Support</div>
-                        <div class="list-group-item"><del>Collaboration</del></div>
-                        <div class="list-group-item"><del>Reports and analytics</del></div>
-                    </ul>
-                    <div class="card-body">
-                        <a href="#" class="btn btn-primary btn-lg btn-block">Choose this Plan</a>
-                    </div>
-                </div>
-                <div class="card pricing popular">
-                    <div class="card-head">
-                        <small class="text-primary">FOR TEAMS</small>
-                        <span class="price">$29<sub>/m</sub></span>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <div class="list-group-item">Unlimited Projects</div>
-                        <div class="list-group-item">100 GB Storage</div>
-                        <div class="list-group-item">Priority Support</div>
-                        <div class="list-group-item">Collaboration</div>
-                        <div class="list-group-item">Reports and analytics</div>
-                    </ul>
-                    <div class="card-body">
-                        <a href="#" class="btn btn-primary btn-lg btn-block">Choose this Plan</a>
-                    </div>
-                </div>
-                <div class="card pricing">
-                    <div class="card-head">
-                        <small class="text-primary">ENTERPRISE</small>
-                        <span class="price">$249<sub>/m</sub></span>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <div class="list-group-item">Unlimited Projects</div>
-                        <div class="list-group-item">Unlimited Storage</div>
-                        <div class="list-group-item">Collaboration</div>
-                        <div class="list-group-item">Reports and analytics</div>
-                        <div class="list-group-item">Web hooks</div>
-                    </ul>
-                    <div class="card-body">
-                        <a href="#" class="btn btn-primary btn-lg btn-block">Choose this Plan</a>
-                    </div>
-                </div>
-            </div>
-            <!-- // end .pricing -->
-
-
-        </div>
-
     </div> -->
     <!-- // end .section -->
 
 
-    <div class="section pt-0">
+
+
+
+   <!--  <div class="section pt-0">
         <div class="container">
             <div class="section-title">
                 <small>FAQ</small>
@@ -435,7 +357,7 @@ URI     : https://colorlib.com
             </div>
         </div>
 
-    </div>
+    </div> -->
     <!-- // end .section -->
 
 
@@ -463,25 +385,23 @@ URI     : https://colorlib.com
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 text-center text-lg-left">
-                    <p class="mb-2"> <span class="ti-location-pin mr-2"></span> 1485 Pacific St, Brooklyn, NY 11216 USA</p>
+                    <p class="mb-2">EECS 352, Winter 2019</p>
                     <div class=" d-block d-sm-inline-block">
                         <p class="mb-2">
-                            <span class="ti-email mr-2"></span> <a class="mr-4" href="mailto:support@mobileapp.com">support@mobileapp.com</a>
+                            <span class="ti-email mr-2"></span> <a class="mr-4" href="mailto:support@mobileapp.com">wesleychan2019@u.northwestern.edu</a>
                         </p>
                     </div>
-                    <div class="d-block d-sm-inline-block">
-                        <p class="mb-0">
-                            <span class="ti-headphone-alt mr-2"></span> <a href="tel:51836362800">518-3636-2800</a>
+                    <div class=" d-block d-sm-inline-block">
+                        <p class="mb-2">
+                            <span class="ti-email mr-2"></span> <a class="mr-4" href="mailto:support@mobileapp.com">kimberlykwon2019@u.northwestern.edu</a>
+                        </p>
+                    </div>
+                    <div class=" d-block d-sm-inline-block">
+                        <p class="mb-2">
+                            <span class="ti-email mr-2"></span> <a class="mr-4" href="mailto:support@mobileapp.com">jodiewei2019@u.northwestern.edu</a>
                         </p>
                     </div>
 
-                </div>
-                <div class="col-lg-6">
-                    <div class="social-icons">
-                        <a href="#"><span class="ti-facebook"></span></a>
-                        <a href="#"><span class="ti-twitter-alt"></span></a>
-                        <a href="#"><span class="ti-instagram"></span></a>
-                    </div>
                 </div>
             </div>
 
