@@ -1,13 +1,6 @@
 <!doctype html>
 <html lang="en">
-<!--
 
-Page    : index / MobApp
-Version : 1.0
-Author  : Colorlib
-URI     : https://colorlib.com
-
- -->
 
 <head>
     <title>What's That Mood?</title>
@@ -23,8 +16,6 @@ URI     : https://colorlib.com
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <!-- Themify Icons -->
-    <link rel="stylesheet" href="css/themify-icons.css">
     <!-- Owl carousel -->
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <!-- Main css -->
@@ -134,9 +125,12 @@ URI     : https://colorlib.com
             </div>
 
             <div class="row pt-4">
-                Many modern music recommendation systems have built recommendations surrounding moods. We wanted to build our own musical mood classifier that is able to take in audio of a song, and determine the overall mood of it.
-                <br/>
-                With the advancements and success of many strong music exploration and recommendation software available today, the mood of songs has become an incredibly important factor in this hierarchy. People’s moods change frequently, and their moods will often affect their taste in music at that time. Furthermore, music also tends to incite emotion, and being able to leverage the emotional power of music in order to spark a feeling in a listener can be extremely powerful in many settings. To generate more successful recommendations, it’s important to be able to categorize songs by their overall mood in order to better match a user’s musical preferences at that particular time. 
+                <p>Many modern music recommendation systems have built recommendations surrounding moods. We wanted to build our own musical mood classifier that is able to take in audio of a song, and determine the overall mood of it.
+                </p>
+                <p>With the advancements and success of many strong music exploration and recommendation software available today, the mood of songs has become an incredibly important factor in this hierarchy. People’s moods change frequently, and their moods will often affect their taste in music at that time. Furthermore, music also tends to incite emotion, and being able to leverage the emotional power of music in order to spark a feeling in a listener can be extremely powerful in many settings. To generate more successful recommendations, it’s important to be able to categorize songs by their overall mood in order to better match a user’s musical preferences at that particular time. 
+                </p>
+                <p>We decided to build a model that uses various song features to categorize songs into several discrete mood labels.
+                </p>
             </div>
         </div>
 
@@ -182,7 +176,7 @@ URI     : https://colorlib.com
                             <h2>Implementation</h2>
                             <p>A KNN classifier using k=20 was constructed using a weighted distance measure. The features used were lyric sentiment, danceability, energy, loudness, mode, acousticness, instrumentalness, valence, and tempo. The possible classifications of a song were romantic, happy, sad, chill, angry, peaceful, energizing, upbeat, and sensual.
                             </p>
-                            <p>
+                            <p>We also noticed that many songs appeared in playlists for several different moods; to mitigate this, we created a dictionary linking each song in our dataset with all of its associated moods.
                             </p>
                         </div>
                     </div>
