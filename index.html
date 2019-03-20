@@ -38,7 +38,7 @@
                                 <li class="nav-item"> <a class="nav-link" href="#overview">OVERVIEW</a> </li>
                                 <li class="nav-item"> <a class="nav-link" href="#methodology">METHODOLOGY</a> </li>
                                 <li class="nav-item"> <a class="nav-link" href="#gallery">GALLERY</a> </li>
-                                <li class="nav-item"> <a class="nav-link" href="#contact">CONTACT</a> </li>
+                                <li class="nav-item"> <a class="nav-link" href="#more">MORE</a> </li>
                                 <li class="nav-item"><a href="#download" class="btn btn-outline-light my-3 my-sm-0 ml-lg-3">Download</a></li>
                             </ul>
                         </div>
@@ -52,71 +52,13 @@
     <header class="bg-gradient" id="home">
         <div class="container mt-5">
             <h1>What's That Mood?</h1>
-            <p class="tagline">The one and only solution for any kind of mobila app landing needs. Just change the screenshots and texts and you are good to go. </p>
+            <p class="tagline">EECS 352 Spring 2019<br/>Northwestern University<br/>Wesley Chan, Kimberly Kwon, and Jodie Wei</p>
+            <br/>
+            <br/>
+            <br/>
         </div>
-        <div class="img-holder mt-3"><img src="images/iphonex.png" alt="phone" class="img-fluid"></div>
     </header>
 
-
-    <!-- <div class="section light-bg" id="features">
-
-
-        <div class="container">
-
-            <div class="section-title">
-                <small>HIGHLIGHTS</small>
-                <h3>Features you love</h3>
-            </div>
-
-
-            <div class="row">
-                <div class="col-12 col-lg-4">
-                    <div class="card features">
-                        <div class="card-body">
-                            <div class="media">
-                                <span class="ti-face-smile gradient-fill ti-3x mr-3"></span>
-                                <div class="media-body">
-                                    <h4 class="card-title">Simple</h4>
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum, urna eu pellentesque </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-lg-4">
-                    <div class="card features">
-                        <div class="card-body">
-                            <div class="media">
-                                <span class="ti-settings gradient-fill ti-3x mr-3"></span>
-                                <div class="media-body">
-                                    <h4 class="card-title">Customize</h4>
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum, urna eu pellentesque </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-lg-4">
-                    <div class="card features">
-                        <div class="card-body">
-                            <div class="media">
-                                <span class="ti-lock gradient-fill ti-3x mr-3"></span>
-                                <div class="media-body">
-                                    <h4 class="card-title">Secure</h4>
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum, urna eu pellentesque </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-
-
-    </div> -->
-    <!-- // end .section -->
 
     <div class="section light-bg" id="overview">
         <div class="container">
@@ -141,6 +83,104 @@
         <div class="container">
             <div class="section-title">
                 <h3>Methodology</h3>
+            </div>
+
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" data-toggle="tab" href="#communication">Dataset</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#schedule">Implementation</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#messages">Results</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#livechat">Future Improvements</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="communication">
+                    <div class="d-flex flex-column flex-lg-row">
+                        <div>
+
+                            <h2>The Data We Used</h2>
+                            <p>We used <a href="https://github.com/plamere/spotipy" target="_blank">SpotiPy</a>, Spotify's Python API, to search for 20 playlists for each mood we use as a classifying label, and downloaded data about the song features, for all songs in the playlists, giving us at least 1,000 songs per classification with 9 different classes. We then limited the number of songs for each mood to 1,043, since that was the length of the shortest mood song set, giving us a total of 9,387 songs.
+                            </p>
+                            <p>To perform sentiment analysis on each song's lyric, we used the <a href="https://github.com/johnwmillr/LyricsGenius" target="_blank">Genius Python API</a> to retrieve the lyrics for each song, and the overall sentiment for the lyrics were calculated using Python TextBlob and averaged across all lines.
+                            </p>
+                            <p>The resulting features used for each song were lyric sentiment, danceability, energy, loudness, mode, acousticness, instrumentalness, valence, and tempo. The possible mood classifications were romantic, happy, sad, chill, angry, peaceful, energizing, upbeat, and sensual.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="schedule">
+                    <div class="d-flex flex-column flex-lg-row">
+                        <div>
+                            <h2>Implementation</h2>
+                            <p>A KNN classifier using k=20 was constructed using a weighted distance measure. The features used were lyric sentiment, danceability, energy, loudness, mode, acousticness, instrumentalness, valence, and tempo. The possible classifications of a song were romantic, happy, sad, chill, angry, peaceful, energizing, upbeat, and sensual.
+                            </p>
+                            <p>We also noticed that many songs appeared in playlists for several different moods; to mitigate this, we created a dictionary linking each song in our dataset with all of its associated moods. If a mood classification given to a song (that exists in the dictionary) matches any of the moods associated with the song, the classification is considered correct. 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="messages">
+                    <div class="d-flex flex-column flex-lg-row">
+                        <div>
+                            <h2>Results</h2>
+                            <p>Our KNN classifier had an accuracy of around 52%. For 9 possible classifications, this isn't too bad.
+                            </p>
+                            <p>We split our data into a train and test set, and below is the confusion matrix generated from the testing. Peaceful, sensual, and angry songs had the highest rate of accuracy, while happy and romantic songs had some trouble. Additionally, it's interesting to note which type of songs were most frequently misclassified and what labels they were most frequently misclassified as. No angry songs were mislabeled as being peaceful, probably because the features of angry songs and peaceful songs are very different. Happy songs were most often classified as upbeat, and a significant amount of upbeat songs were classified as happy, leading us to question whether our selected mood labels were the cause of error in the model. <br/>
+                                <img src="images/confusion_matrix.png" alt="confusion_matrix"/>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="livechat">
+                    <div class="d-flex flex-column flex-lg-row">
+                        <div>
+                            <h2>Future Improvements</h2>
+                            <p>One aspect we noticed about our data gathering method was that since we were using user-created playlists on Spotify, a song's existence in a certain mood playlist was completely subjective to the playlist creator. There were songs that had mood classifications that we personally did not agree with. In the future, we would look into other ways of categorizing songs.
+                            </p>
+                            <p>It would be also interesting to test the accuracy of our model using mood labels different from the 9 we are currently using. As seen in the confusion matrix under the Results section, certain mislabelings such as the mislabeling of happy as upbeat occurred much more frequently than others.
+                            </p>
+                            <p>Additionally, in the future our project could be used to automatically generate Spotify mood playlists, for the perfect playlist for any situation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <!-- // end .section -->
+
+
+    <div class="section light-bg" id="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h3>Examples</h3>
+            </div>
+            <p>We tried our classifier on some of our favorite songs. The output for each is a bar graph showing the distribution of mood labels in each song's k=20 neighbors, with the most common mood label being the classification for the input song.</p>
+            <div class="img-gallery owl-carousel owl-theme">
+                <img src="images/smino.png" alt="image">
+                <img src="images/postmalone.png" alt="image">
+                <img src="images/willow.png" alt="image">
+                <img src="images/samsmith.png" alt="image">
+                <img src="images/danielcaesar.png" alt="image">
+                <img src="images/billieeilish.png" alt="image">                
+            </div>
+
+        </div>
+
+    </div>
+    <!-- // end .section -->
+
+    <div class="section light-bg" id="more">
+        <div class="container">
+            <div class="section-title">
+                <h3>More Interesting Findings</h3>
             </div>
 
             <ul class="nav nav-tabs nav-justified" role="tablist">
@@ -213,25 +253,6 @@
     <!-- // end .section -->
 
 
-    <div class="section light-bg" id="gallery">
-        <div class="container">
-            <div class="section-title">
-                <h3>Examples</h3>
-            </div>
-
-            <div class="img-gallery owl-carousel owl-theme">
-                <img src="images/smino.png" alt="image">
-                <img src="images/postmalone.png" alt="image">
-                <img src="images/willow.png" alt="image">
-                <img src="images/samsmith.png" alt="image">
-                <img src="images/danielcaesar.png" alt="image">
-                <img src="images/billieeilish.png" alt="image">                
-            </div>
-
-        </div>
-
-    </div>
-    <!-- // end .section -->
 
      <div class="section light-bg" id="download">
         <div class="container" style="display: center">
@@ -251,7 +272,7 @@
     
     <!-- // end .section -->
 
-
+    
     <div class="section light-bg">
 
         <div class="container">
@@ -375,26 +396,11 @@
     </div> -->
     <!-- // end .section -->
 
-    <div class="light-bg py-5" id="contact">
+    <div class="light-bg py-5">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 text-center text-lg-left">
-                    <p class="mb-2">EECS 352, Winter 2019</p>
-                    <div class=" d-block d-sm-inline-block">
-                        <p class="mb-2">
-                            <span class="ti-email mr-2"></span> <a class="mr-4" href="mailto:support@mobileapp.com">wesleychan2019@u.northwestern.edu</a>
-                        </p>
-                    </div>
-                    <div class=" d-block d-sm-inline-block">
-                        <p class="mb-2">
-                            <span class="ti-email mr-2"></span> <a class="mr-4" href="mailto:support@mobileapp.com">kimberlykwon2019@u.northwestern.edu</a>
-                        </p>
-                    </div>
-                    <div class=" d-block d-sm-inline-block">
-                        <p class="mb-2">
-                            <span class="ti-email mr-2"></span> <a class="mr-4" href="mailto:support@mobileapp.com">jodiewei2019@u.northwestern.edu</a>
-                        </p>
-                    </div>
+                    <p class="mb-2">Special thanks to Professor Pardo!</p>
 
                 </div>
             </div>
