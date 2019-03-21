@@ -107,10 +107,13 @@
                             <h2>The Data We Used</h2>
                             <p>We used <a href="https://github.com/plamere/spotipy" target="_blank">SpotiPy</a>, Spotify's Python API, to search for 20 playlists for each mood we use as a classifying label, and downloaded data about the song features, for all songs in the playlists, giving us at least 1,000 songs per classification with 9 different classes. We then limited the number of songs for each mood to 1,043, since that was the length of the shortest mood song set, giving us a total of 9,387 songs.
                             </p>
+                            <p>The <b>mood labels</b> we decided to include in our dataset are:</p>
+                            <p style="text-align:center;">Romantic, Happy, Sad, Chill, Angry, Peaceful, Energizing, Upbeat, and Sensual</p>
                             <p>To perform sentiment analysis on each song's lyric, we used the <a href="https://github.com/johnwmillr/LyricsGenius" target="_blank">Genius Python API</a> to retrieve the lyrics for each song, and the overall sentiment for the lyrics were calculated using Python TextBlob and averaged across all lines.
                             </p>
-                            <p>The resulting features used for each song were lyric sentiment, danceability, energy, loudness, mode, acousticness, instrumentalness, valence, and tempo. The possible mood classifications were romantic, happy, sad, chill, angry, peaceful, energizing, upbeat, and sensual.
+                            <p>The resulting <b>features</b> used for each song were:
                             </p>
+                            <p style="text-align:center;">Lyric sentiment, Danceability, Energy, Loudness, Mode, Acousticness, Instrumentalness, Valence, and Tempo.</p>
                         </div>
                     </div>
                 </div>
