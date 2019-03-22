@@ -199,9 +199,9 @@
                     <div class="d-flex flex-column flex-lg-row">
                         <div>
                             <h2>Ablation Testing</h2>
-                            <p>We noticed that we had a few songs that were present in different mood categories. To mitigate this, we created a dataset of songs and all associated moods.</p>
+                            <p>We performed ablation testing on the features for each data point by testing our classifier several times with one feature removed each time.</p>
                             <img src="images/ablation_testing.png" alt="ablation_testing" style="width:400px; align-items: center"/> 
-                            <p>We found that ...
+                            <p>Taking out loudness and mode increased accuracy the most while taking out instrumentalness decreased accuracy more than taking out other features. In the future, it would be interesting to also perform principal component analysis on our features.
                             </p>
                         </div>
                     </div>
@@ -210,9 +210,10 @@
                     <div class="d-flex flex-column flex-lg-row">
                         <div>
                             <h2>Overlapping Songs</h2>
-                            <p>We performed ablation testing on the features for each data point by testing our classifier several times with one feature removed each time.</p>
+                            <p>We noticed that we had a few songs that were present in different mood categories. To mitigate this, we created a dataset of songs and all associated moods.</p>
                             <img src="images/overlap_results.png" alt="overlap_results" style="width:400px; align-items: center"/> \
-                            <p>We found that ...
+                            <p>
+                            The ratios of overlapped songs for each mood pair was quite low, however we were concerned that having overlap build up over several moods would have an impact on our model so we created another dataset of each song and all of its associated moods. We found that this did increase our accuracy.
                             </p>
                         </div>
                     </div>
