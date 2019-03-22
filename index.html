@@ -204,11 +204,11 @@
                 <div class="tab-pane fade show active" id="communication">
                     <div class="d-flex flex-column flex-lg-row">
                         <div>
-
-                            <h2>The Data We Used</h2>
-                            <p>We used the SpotiPy, Spotify's Python API, to search for 15 playlists for each mood we used as a classifying label, and downloaded data about the song features, such as tempo and loudness, for all songs in the playlists, giving us at least 1000 songs per classification with 9 different classes, for a total of about 9000 songs.
+                            <h2>Ablation Testing</h2>
+                            <p>We ommitted one mood label each and repeatedly ran our results.
+                                 <img src="images/confusion_matrix.png" alt="confusion_matrix"/> 
                             </p>
-                            <p>To perform sentiment analysis on each song's lyric, we used the Genius Python API to retrieve the lyrics for each song, and the overall sentiment for the lyrics were calculated using Python TextBlob and averaged across all lines.
+                            <p>We found that ...
                             </p>
                         </div>
                     </div>
@@ -216,35 +216,12 @@
                 <div class="tab-pane fade" id="schedule">
                     <div class="d-flex flex-column flex-lg-row">
                         <div>
-                            <h2>Implementation</h2>
-                            <p>A KNN classifier using k=20 was constructed using a weighted distance measure. The features used were lyric sentiment, danceability, energy, loudness, mode, acousticness, instrumentalness, valence, and tempo. The possible classifications of a song were romantic, happy, sad, chill, angry, peaceful, energizing, upbeat, and sensual.
+                            <h2>Overlapping Songs</h2>
+                            <p>The user-curated playlists we used from Spotify had overlapping songs for different moods. To determine if this would greatly affect our results, we ran a script to see the percentages of overlap between each mood pair.
+                                <img src="images/confusion_matrix.png" alt="confusion_matrix"/> 
                             </p>
-                            <p>We also noticed that many songs appeared in playlists for several different moods; to mitigate this, we created a dictionary linking each song in our dataset with all of its associated moods.
+                            <p>We found that ...
                             </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-pane fade" id="messages">
-                    <div class="d-flex flex-column flex-lg-row">
-                        <div>
-                            <h2>Results</h2>
-                            <p class="lead">Uniquely underwhelm premium outsourcing with proactive leadership skills. </p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum, urna eu pellentesque pretium, nisi nisi fermentum enim, et sagittis dolor nulla vel sapien. Vestibulum sit amet mattis ante. Ut placerat dui eu nulla
-                                congue tincidunt ac a nibh. Mauris accumsan pulvinar lorem placerat volutpat. Praesent quis facilisis elit. Sed condimentum neque quis ex porttitor,
-                            </p>
-                            <p> malesuada faucibus augue aliquet. Sed elit est, eleifend sed dapibus a, semper a eros. Vestibulum blandit vulputate pharetra. Phasellus lobortis leo a nisl euismod, eu faucibus justo sollicitudin. Mauris consectetur, tortor
-                                sed tempor malesuada, sem nunc porta augue, in dictum arcu tortor id turpis. Proin aliquet vulputate aliquam.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-pane fade" id="livechat">
-                    <div class="d-flex flex-column flex-lg-row">
-                        <div>
-                            <h2>Future Improvements</h2>
-                            <p>One aspect we noticed about our data gathering method was that since we were using user-created playlists on Spotify, a song's existence in a certain mood playlist was completely subjective to the playlist creator. There were songs that had mood classifications that we personally did not agree with. In the future, we would look into other ways of categorizing songs.
-                            </p>
-                            <p>Additionally, in the future our project could be used to automatically generate Spotify mood playlists, for the perfect playlist for any situation.</p>
                         </div>
                     </div>
                 </div>
