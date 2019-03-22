@@ -31,7 +31,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <nav class="navbar navbar-dark navbar-expand-lg">
-                        <a class="navbar-brand" href="index.html"> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+                        <a  href="index.html"> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
                         <div class="collapse navbar-collapse" id="navbar">
                             <ul class="navbar-nav ml-auto">
                                 <li class="nav-item"> <a class="nav-link active" href="#home">HOME <span class="sr-only">(current)</span></a> </li>
@@ -109,7 +109,7 @@
                             </p>
                             <p>The <b>mood labels</b> we decided to include in our dataset are:</p>
                             <p style="text-align:center;">Romantic, Happy, Sad, Chill, Angry, Peaceful, Energizing, Upbeat, and Sensual</p>
-                            <p>To perform sentiment analysis on each song's lyric, we used the <a href="https://github.com/johnwmillr/LyricsGenius" target="_blank">Genius Python API</a> to retrieve the lyrics for each song, and the overall sentiment for the lyrics were calculated using Python TextBlob and averaged across all lines.
+                            <p>To perform sentiment analysis on each song's lyric, we used the <a href="https://github.com/johnwmillr/LyricsGenius" target="_blank">Genius Python API</a> to retrieve the lyrics for each song, and the overall sentiment for the lyrics were calculated using Python TextBlob and averaged across all lines. Then we utilized Spotify's API to grab 8 other audio features of each song. These features are described in more depth in  <a href="https://developer.spotify.com/documentation/web-api/reference/tracks/get-several-audio-features/" target="_blank">Spotify's documentation</a>
                             </p>
                             <p>The resulting <b>features</b> used for each song were:
                             </p>
@@ -121,9 +121,12 @@
                     <div class="d-flex flex-column flex-lg-row">
                         <div>
                             <h2>Implementation</h2>
-                            <p>A KNN classifier using k=20 was constructed using a weighted distance measure. The features used were lyric sentiment, danceability, energy, loudness, mode, acousticness, instrumentalness, valence, and tempo. The possible classifications of a song were romantic, happy, sad, chill, angry, peaceful, energizing, upbeat, and sensual.
+                            <p>We decided to implment a K-Nearest Neighbors algorithm as our classifier. With our constructed dataset, we first start by scaling all features to standardize them. Then we split the dataset into a training set (80%) and testing set (20%). Then we fit our KNN model to the training data using k=20, Euclidean distance metric, and weighted by distance. <br/>
+                                <div style="display: flex; justify-content: center;">
+                                    <img src="images/implementation.png" alt="Implementation" align="middle"/>
+                                </div>
                             </p>
-                            <p>We also noticed that many songs appeared in playlists for several different moods; to mitigate this, we created a dictionary linking each song in our dataset with all of its associated moods. If a mood classification given to a song (that exists in the dictionary) matches any of the moods associated with the song, the classification is considered correct. 
+                            <p>To test our results, we fit our KNN model to our training set and run all the songs in our test set with the model. Because some songs may be labeled as more than one mood in the dataset, we keep track of all the mood labels each song has to mitigate any mood overlap problems (more information on song overlaps in the "More Interesting Findings" section below. If the KNN prediction for a song matches any of the moods associated with the song, the classification is considered correct. We generated confusion matrices to allow us to further refine our model and also gain insight into which moods had the highest classification accuracy, and to analyze the impact of individual features using ablation testing. 
                             </p>
                         </div>
                     </div>
@@ -134,8 +137,10 @@
                             <h2>Results</h2>
                             <p>Our KNN classifier had an accuracy of around 52%. For 9 possible classifications, this isn't too bad.
                             </p>
-                            <p>We split our data into a train and test set, and below is the confusion matrix generated from the testing. Peaceful, sensual, and angry songs had the highest rate of accuracy, while happy and romantic songs had some trouble. Additionally, it's interesting to note which type of songs were most frequently misclassified and what labels they were most frequently misclassified as. No angry songs were mislabeled as being peaceful, probably because the features of angry songs and peaceful songs are very different. Happy songs were most often classified as upbeat, and a significant amount of upbeat songs were classified as happy, leading us to question whether our selected mood labels were the cause of error in the model. <br/>
-                                <img src="images/confusion_matrix.png" alt="confusion_matrix"/>
+                            <p>We split our data into a train and test set, and below is the confusion matrix generated from the testing. Peaceful, sensual, and angry songs had the highest rate of accuracy, while happy and romantic songs had some trouble. Additionally, it's interesting to note which type of songs were most frequently misclassified and what labels they were most frequently misclassified as. No angry songs were mislabeled as being peaceful, probably because the features of angry songs and peaceful songs are very different. Happy songs were most often classified as upbeat, and a significant amount of upbeat songs were classified as happy, leading us to question whether our selected mood labels were the cause of error in the model. Overall, a 52.3% accuracy indicates good performance considering the predictor is predicting out of nine labels. <br/>
+                                <div style="display: flex; justify-content: center;">
+                                    <img src="images/confusion_matrix.png" alt="confusion_matrix"/>
+                                </div>
                             </p>
                         </div>
                     </div>
@@ -144,11 +149,12 @@
                     <div class="d-flex flex-column flex-lg-row">
                         <div>
                             <h2>Future Improvements</h2>
-                            <p>One aspect we noticed about our data gathering method was that since we were using user-created playlists on Spotify, a song's existence in a certain mood playlist was completely subjective to the playlist creator. There were songs that had mood classifications that we personally did not agree with. In the future, we would look into other ways of categorizing songs.
+                            <p>One aspect we noticed about our data gathering method was that since we were using user-created playlists on Spotify, a song's existence in a certain mood playlist was completely subjective to the playlist creator. There were songs that had mood classifications that we personally did not agree with. Moreover, the dataset was likely not big enough to garner enough external validity. In the future, we would look into other ways of categorizing songs, and more reliable methods to generate a larger dataset of various songs. In addition to this, it’ll also be worthwhile to look more into audio analysis of the songs to include as features.
                             </p>
-                            <p>It would be also interesting to test the accuracy of our model using mood labels different from the 9 we are currently using. As seen in the confusion matrix under the Results section, certain mislabelings such as the mislabeling of happy as upbeat occurred much more frequently than others.
+                            <p>It would also be interesting to test the accuracy of our model using mood labels different from the nine we are currently using. 
                             </p>
-                            <p>Additionally, in the future our project could be used to automatically generate Spotify mood playlists, for the perfect playlist for any situation.</p>
+                            <p>Additionally, in the future our project could be used to automatically generate Spotify mood playlists, for the perfect playlist for any situation.
+                            </p>                        
                         </div>
                     </div>
                 </div>
