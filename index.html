@@ -199,9 +199,9 @@
                     <div class="d-flex flex-column flex-lg-row">
                         <div>
                             <h2>Ablation Testing</h2>
-                            <p>We ommitted one mood label each and repeatedly ran our results.
-                                 <img src="images/confusion_matrix.png" alt="confusion_matrix"/> 
-                            </p>
+                            <p>We noticed that we had a few songs that were present in different mood categories. To mitigate this, we created a dataset of songs and all associated moods.</p>
+
+                            <img src="images/ablation_testing.png" alt="ablation_testing"/> 
                             <p>We found that ...
                             </p>
                         </div>
@@ -211,9 +211,9 @@
                     <div class="d-flex flex-column flex-lg-row">
                         <div>
                             <h2>Overlapping Songs</h2>
-                            <p>The user-curated playlists we used from Spotify had overlapping songs for different moods. To determine if this would greatly affect our results, we ran a script to see the percentages of overlap between each mood pair.
-                            </p>
-                            <img src="images/confusion_matrix.png" alt="confusion_matrix"/> \
+                            <p>We performed ablation testing on the features for each data point by testing our classifier several times with one feature removed each time.</p>
+
+                            <img src="images/overlap_results.png" alt="overlap_results"/> \
                             <p>We found that ...
                             </p>
                         </div>
