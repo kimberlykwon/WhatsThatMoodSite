@@ -205,9 +205,9 @@
                     <div class="d-flex flex-column flex-lg-row">
                         <div>
                             <h2>Ablation Testing</h2>
-                            <p>We performed ablation testing on the features for each data point by testing our classifier several times with one feature removed each time.</p>
+                            <p>We performed ablation testing on the features for each data point by testing our classifier several times with one feature removed each time. The point of this was to see which features tend to affect the accuracy the most, whether positively or negatively.</p>
                             <img src="images/ablation_testing.png" alt="ablation_testing" style="width:400px; align-items: center"/> 
-                            <p>Taking out loudness and mode increased accuracy the most while taking out instrumentalness decreased accuracy more than taking out other features. In the future, it would be interesting to also perform principal component analysis on our features.
+                            <p> <br> With our baseline accuracy as 52.3% with all nine features, we see that taking out loudness and mode increased accuracy the most while taking out instrumentalness decreased accuracy most. Overall though, no features seemed to tank or bolster accuracy by a substantial amount. In the future, it would be interesting to also perform principal component analysis on our features and test combinations of features as well in addition to just taking them out one by one. 
                             </p>
                         </div>
                     </div>
@@ -217,9 +217,10 @@
                         <div>
                             <h2>Overlapping Songs</h2>
                             <p>We noticed that we had a few songs that were present in different mood categories. To mitigate this, we created a dataset of songs and all associated moods.</p>
-                            <img src="images/overlap_results.png" alt="overlap_results" style="width:400px; align-items: center"/> \
+                            <img src="images/overlap_results.png" alt="overlap_results" style="width:400px; align-items: center"/>
                             <p>
-                            The ratios of overlapped songs for each mood pair was quite low, however we were concerned that having overlap build up over several moods would have an impact on our model so we created another dataset of each song and all of its associated moods. We found that this did increase our accuracy.
+                            <br>
+                            The ratios of overlapped songs for each mood pair was quite low, however we were concerned that having overlap build up over several moods would have an impact on our model so we created another dataset of each song and all of its associated moods. Our predictions then was considered correct as long as it was one of the moods associated with the song. We found that this did increase our accuracy.
                             </p>
                         </div>
                     </div>
